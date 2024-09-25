@@ -1,0 +1,12 @@
+fun isPalindrome(array: IntArray): Boolean {
+    val reversedArray = array.reversedArray()
+    return array.contentEquals(reversedArray)
+}
+
+fun main() {
+    val array1 = intArrayOf(1, 2, 3, 2, 1)
+    val array2 = intArrayOf(1, 2, 3, 4, 5)
+
+    println("Массив 1: ${isPalindrome(array1)}") // true
+    println("Массив 2: ${isPalindrome(array2)}") // false
+}
