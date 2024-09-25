@@ -1,0 +1,20 @@
+fun <T> removeElement(array: Array<T>, element: T): Array<T> {
+    val newArray = arrayOfNulls<T>(array.size - 1)
+    var newArrayIndex = 0
+    
+    for (i in array.indices) {
+        if (array[i] != element) {
+            newArray[newArrayIndex++] = array[i]
+        }
+    }
+
+    return newArray.filterNotNull().toTypedArray()
+}
+
+val myArray = arrayOf(1, 2, 3, 4, 5, 3)
+val elementToRemove = 3
+
+val result = removeElement(myArray, elementToRemove)
+
+println("Исходный массив: ${myArray.contentToString()}")
+println("Массив после удаления: ${result.contentToString()}")
