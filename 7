@@ -1,0 +1,15 @@
+fun reverseArray(array: IntArray): IntArray {
+    val reversedArray = IntArray(array.size)
+    for (i in array.indices) {
+        reversedArray[i] = array[array.size - i - 1]
+    }
+    return reversedArray
+}
+
+fun main() {
+    val originalArray = intArrayOf(1, 2, 3, 4, 5)
+    val reversedArray = reverseArray(originalArray)
+
+    println("Оригинальный массив: ${originalArray.contentToString()}")
+    println("Обратный массив: ${reversedArray.contentToString()}")
+}
