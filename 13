@@ -1,0 +1,8 @@
+import kotlin.random.Random
+
+fun main() {
+    val randomNumbers = Array(20) { Random.nextInt(1, 101) } // Создаем массив из 20 случайных чисел от 1 до 100
+
+    println("Случайные числа:")
+    randomNumbers.forEach { println(it) } // Выводим массив на экран
+}
