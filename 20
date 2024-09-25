@@ -1,0 +1,13 @@
+fun main() {
+
+    val a1 = 1
+    val d = 3
+    val n = 5
+
+    val arithmeticProgression = IntArray(n) { a1 + it  d }
+
+    println("Арифметическая прогрессия:")
+    for (element in arithmeticProgression) {
+        print("$element ")
+    }
+}
