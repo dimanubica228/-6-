@@ -1,0 +1,19 @@
+fun linearSearch(array: IntArray, target: Int): Boolean {
+    for (element in array) {
+        if (element == target) {
+            return true
+        }
+    }
+    return false
+}
+
+fun main() {
+    val numbers = intArrayOf(5, 1, 8, 2, 9, 4, 7)
+    val target = 9
+
+    if (linearSearch(numbers, target)) {
+        println("Элемент $target найден в массиве.")
+    } else {
+        println("Элемент $target не найден в массиве.")
+    }
+}
