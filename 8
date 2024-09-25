@@ -1,0 +1,21 @@
+fun main() {
+    val array = arrayOf(1, 5, 3, 7, 9)
+    val target = 7
+
+    val index = findElementIndex(array, target)
+
+    if (index != -1) {
+        println("Индекс элемента $target: $index")
+    } else {
+        println("Элемент $target не найден в массиве.")
+    }
+}
+
+fun findElementIndex(array: Array<Int>, target: Int): Int {
+    for (i in array.indices) {
+        if (array[i] == target) {
+            return i
+        }
+    }
+    return -1 // Элемент не найден
+}
