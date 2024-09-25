@@ -1,0 +1,22 @@
+fun findMedian(numbers: IntArray): Double {
+    if (numbers.isEmpty()) {
+        return 0.0 
+    }
+
+    numbers.sort()
+
+    val middleIndex = numbers.size / 2
+
+    if (numbers.size % 2 != 0) {
+        return numbers[middleIndex].toDouble()
+    } else {
+
+        return (numbers[middleIndex - 1] + numbers[middleIndex]).toDouble() / 2
+    }
+}
+
+fun main() {
+    val numbers = intArrayOf(5, 1, 8, 2, 9, 4, 7)
+    val median = findMedian(numbers)
+    println("Медиана: $median")
+}
