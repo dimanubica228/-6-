@@ -1,0 +1,39 @@
+fun findLongestSequence(array: IntArray): Pair<Int, Int> {
+    if (array.isEmpty()) {
+        return Pair(-1, 0) 
+    }
+
+    var currentCount = 1
+    var maxCount = 1
+    var start = 0
+    var maxStart = 0
+
+    for (i in 1 until array.size) {
+        if (array[i] == array[i - 1]) {
+            currentCount++
+        } else {
+            currentCount = 1
+            start = i
+        }
+
+        if (currentCount > maxCount) {
+            maxCount = currentCount
+            maxStart = start
+        }
+    }
+
+    return Pair(maxStart, maxCount)
+}
+
+fun main() {
+    val numbers = intArrayOf(1, 1, 2, 3, 3, 3, 4, 4, 5, 5, 5, 5, 6)
+
+    val (startIndex, length) = findLongestSequence(numbers)
+
+    if (length > 0) {
+        println("Самая длинная последовательность одинаковых элементов:")
+        println("Начало: $startIndex, Длина: $length")
+        println("Элементы: ${numbers.sliceArray(startIndex until (startIndex + length))}")
+    } else {
+        println("В массиве нет последовательностей.")
+    }
