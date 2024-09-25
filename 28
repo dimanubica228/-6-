@@ -1,0 +1,11 @@
+fun main() {
+    println("Введите массив чисел, разделенных пробелами:")
+    val input = readLine()
+
+    if (input != null) {
+        val numbers = input.split(" ").map { it.toInt() }.toIntArray()
+        println("Введенный массив: ${numbers.contentToString()}")
+    } else {
+        println("Некорректный ввод.")
+    }
+}
