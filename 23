@@ -1,0 +1,27 @@
+fun mergeArrays(vararg arrays: IntArray): IntArray {
+    var totalSize = 0
+    for (array in arrays) {
+        totalSize += array.size
+    }
+
+    val resultArray = IntArray(totalSize)
+
+    var resultIndex = 0
+
+    for (array in arrays) {
+        for (element in array) {
+            resultArray[resultIndex++] = element
+        }
+    }
+
+    return resultArray
+}
+
+fun main() {
+    val array1 = intArrayOf(1, 2, 3)
+    val array2 = intArrayOf(4, 5, 6)
+    val array3 = intArrayOf(7, 8, 9)
+
+    val mergedArray = mergeArrays(array1, array2, array3)
+    println("Объединенный массив: ${mergedArray.contentToString()}")
+}
